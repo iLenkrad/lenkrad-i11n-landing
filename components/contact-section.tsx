@@ -62,7 +62,7 @@ export function ContactSection() {
                 className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 asChild
               >
-                <a href="https://linkedin.com/company/lenkrad" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/company/lenkradgps/" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>

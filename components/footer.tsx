@@ -25,7 +25,7 @@ export function Footer() {
 
           {/* LinkedIn */}
           <Link 
-            href="https://linkedin.com/company/lenkrad" 
+            href="https://www.linkedin.com/company/lenkradgps/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-secondary-foreground/70 hover:text-secondary-foreground transition-colors"
