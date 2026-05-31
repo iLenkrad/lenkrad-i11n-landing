@@ -8,6 +8,7 @@ import { FeaturesSection } from '@/components/features-section'
 import { ScreenshotsSection } from '@/components/screenshots-section'
 import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
+import { FEATURE_FLAGS } from '@/lib/feature-flags'
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
           <HeroSection />
           <SolutionsSection />
           <FeaturesSection />
-          <ScreenshotsSection />
+          {FEATURE_FLAGS.screenshots ? <ScreenshotsSection /> : null}
           <ContactSection />
         </main>
         <Footer />

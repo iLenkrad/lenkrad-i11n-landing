@@ -6,6 +6,7 @@ import { useLanguage } from '@/components/language-provider'
 import { LanguageSwitcher } from '@/components/language-switcher'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { FEATURE_FLAGS } from '@/lib/feature-flags'
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
 
@@ -16,7 +17,7 @@ export function Header() {
   const navItems = [
     { href: '#solutions', label: t.nav.solutions },
     { href: '#features', label: t.nav.features },
-    { href: '#screenshots', label: t.nav.screenshots },
+    ...(FEATURE_FLAGS.screenshots ? [{ href: '#screenshots', label: t.nav.screenshots }] : []),
     { href: '#contact', label: t.nav.contact },
   ]
 

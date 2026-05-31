@@ -18,7 +18,7 @@ export const translations = {
     },
     // Solutions Section
     solutions: {
-      title: 'Neden Lenkrad?',
+      title: 'Neden Lenkrad GPS?',
       subtitle: 'Her ölçekte işletme için esnek, güçlü ve güvenilir GPS takip altyapısı',
       whiteLabel: {
         title: 'White Label Çözüm',
@@ -118,12 +118,12 @@ export const translations = {
       email: 'E-posta',
       emailAddress: 'b2b@lenkrad.com.tr',
       linkedin: 'LinkedIn',
-      linkedinHandle: 'Lenkrad',
+      linkedinHandle: 'Lenkrad GPS',
       cta: 'E-posta Gönder',
     },
     // Footer
     footer: {
-      rights: 'Tüm hakları saklıdır. Lenkrad - White Label GPS Takip ve IoT Platformu.',
+      rights: 'Tüm hakları saklıdır. Lenkrad GPS - White Label GPS Takip ve IoT Platformu.',
       linkedin: 'LinkedIn',
     },
     // Language
@@ -249,12 +249,12 @@ export const translations = {
       email: 'Email',
       emailAddress: 'b2b@lenkrad.com.tr',
       linkedin: 'LinkedIn',
-      linkedinHandle: 'Lenkrad',
+      linkedinHandle: 'Lenkrad GPS',
       cta: 'Send Email',
     },
     // Footer
     footer: {
-      rights: 'All rights reserved. Lenkrad - White Label GPS Tracking & IoT Platform.',
+      rights: 'All rights reserved. Lenkrad GPS - White Label GPS Tracking & IoT Platform.',
       linkedin: 'LinkedIn',
     },
     // Language
