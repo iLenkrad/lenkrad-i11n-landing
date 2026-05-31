@@ -45,7 +45,7 @@ export const translations = {
         description: 'Raporlar, uyarılar, gösterge paneli ve tüm kullanıcı deneyimi ihtiyaçlarınıza göre özelleştirilebilir.',
       },
     },
-    // Features Section (keeping existing but updating context)
+    // Features Section
     alerts: {
       title: 'Uyarılar',
       description: 'Herhangi bir uyarıyı etkinleştirerek, bir olay meydana geldiğinde bildirim, SMS, telefon araması veya Telegram botu aracılığıyla haberdar olabilirsiniz.',
@@ -80,6 +80,32 @@ export const translations = {
     navigation: {
       title: 'Araca Navigasyon',
       description: 'Google Maps, Waze ve diğer harita uygulamaları ile entegre navigasyon desteği.',
+    },
+    // Detailed Platform Features
+    platformFeatures: {
+      admin: {
+        title: 'Yönetim ve Satış',
+        multiLevelAdmin: 'Çok seviyeli erişim yetkisine sahip yönetim paneli.',
+        wholesaleCRM: 'Hepsi bir arada takip cihazı toptan satış yönetim platformu ve CRM.',
+        resellerDashboards: 'Bayiler için özelleştirilmiş yönetim ve takip panelleri.',
+        analyticalDashboards: 'Satış, yenileme ve toptan satış istatistikleri için analitik paneller.',
+        geoLimiting: 'Bayileri belirli coğrafi satış alanlarıyla sınırlandırma desteği.',
+        packagePurchases: 'Müşteri paket satın alımları ve yönetimi.',
+      },
+      endUser: {
+        title: 'Son Kullanıcı (Bireysel, Kurumsal, Devlet)',
+        subAccounts: 'Alt hesap hiyerarşisine sahip bireysel ve kurumsal hesap yönetimi.',
+        accessControl: 'Cihazlar ve gruplar için detaylı erişim seviyesi kontrolü.',
+        pushNotifications: 'Tüm olaylar için anlık bildirim (push notification) desteği.',
+        messengerBots: 'Son kullanıcılar için entegre mesajlaşma botları (Telegram, WhatsApp vb.).',
+        fleetReports: 'Gelişmiş telematik raporlama ve filo yönetimi analizleri.',
+      },
+      system: {
+        title: 'Sistem ve Güvenlik',
+        aiSupport: '7/24 müşteri desteği için AI ajanı + canlı destek entegrasyonu.',
+        airGapped: 'Yüksek güvenlik gereksinimleri için internetten bağımsız (air-gapped) kurulum desteği.',
+        i18n: 'Yerleşik çoklu dil ve tam uluslararasılaştırma desteği.',
+      }
     },
     // Screenshots Section
     screenshots: {
@@ -185,6 +211,32 @@ export const translations = {
     navigation: {
       title: 'Navigate to Vehicle',
       description: 'Integrated navigation support with Google Maps, Waze, and other map applications.',
+    },
+    // Detailed Platform Features
+    platformFeatures: {
+      admin: {
+        title: 'Administration & Sales',
+        multiLevelAdmin: 'Multi-access level administration dashboard.',
+        wholesaleCRM: 'All-in-one tracker wholesale management platform and CRM.',
+        resellerDashboards: 'Reseller dashboards with dedicated management tools.',
+        analyticalDashboards: 'Management analytics for sales, renewals, and wholesale stats.',
+        geoLimiting: 'Restrict resellers to specific geographic sales areas.',
+        packagePurchases: 'Direct customer package purchase and management.',
+      },
+      endUser: {
+        title: 'End-User (Private, Corporate, Government)',
+        subAccounts: 'Personal and corporate accounts with hierarchy and sub-accounts.',
+        accessControl: 'Granular access level control for trackers and grouping.',
+        pushNotifications: 'Real-time push notifications for all events.',
+        messengerBots: 'Integrated messenger bots (Telegram, WhatsApp, etc.) for end-users.',
+        fleetReports: 'Advanced telematic reporting and fleet management insights.',
+      },
+      system: {
+        title: 'System & Security',
+        aiSupport: 'AI Agent for 24/7 customer support + human chat integration.',
+        airGapped: 'Support for air-gapped environments for high security requirements.',
+        i18n: 'Native multi-language and full internationalization support.',
+      }
     },
     // Screenshots Section
     screenshots: {

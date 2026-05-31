@@ -2,136 +2,116 @@
 
 import { useLanguage } from '@/components/language-provider'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Bell, Car, Gauge, Move, Zap, History, MapPinned, CheckCircle, Shield, FileText, Navigation } from 'lucide-react'
+import { 
+  Users, 
+  ShieldCheck, 
+  BellRing, 
+  Bot, 
+  BarChart3, 
+  LayoutDashboard, 
+  Globe, 
+  Lock, 
+  MessageSquare, 
+  Truck, 
+  ShoppingCart, 
+  MapPin, 
+  Layers,
+  Briefcase,
+  UserCircle
+} from 'lucide-react'
 
 export function FeaturesSection() {
   const { t } = useLanguage()
 
-  const alertFeatures = [
-    { icon: Car, label: t.alerts.engineOnOff },
-    { icon: Gauge, label: t.alerts.speeding },
-    { icon: Move, label: t.alerts.movement },
-    { icon: Zap, label: t.alerts.powerCut },
+  const adminFeatures = [
+    { icon: LayoutDashboard, label: t.platformFeatures.admin.multiLevelAdmin },
+    { icon: Briefcase, label: t.platformFeatures.admin.wholesaleCRM },
+    { icon: Layers, label: t.platformFeatures.admin.resellerDashboards },
+    { icon: BarChart3, label: t.platformFeatures.admin.analyticalDashboards },
+    { icon: MapPin, label: t.platformFeatures.admin.geoLimiting },
+    { icon: ShoppingCart, label: t.platformFeatures.admin.packagePurchases },
   ]
 
-  const locationFeatures = [
-    { label: t.locationHistory.distance },
-    { label: t.locationHistory.stops },
-    { label: t.locationHistory.speed },
+  const endUserFeatures = [
+    { icon: UserCircle, label: t.platformFeatures.endUser.subAccounts },
+    { icon: ShieldCheck, label: t.platformFeatures.endUser.accessControl },
+    { icon: BellRing, label: t.platformFeatures.endUser.pushNotifications },
+    { icon: Bot, label: t.platformFeatures.endUser.messengerBots },
+    { icon: Truck, label: t.platformFeatures.endUser.fleetReports },
   ]
 
-  const geofenceFeatures = [
-    { label: t.geofencing.entryExit },
-    { label: t.geofencing.reports },
-    { label: t.geofencing.unlimited },
+  const systemFeatures = [
+    { icon: MessageSquare, label: t.platformFeatures.system.aiSupport },
+    { icon: Lock, label: t.platformFeatures.system.airGapped },
+    { icon: Globe, label: t.platformFeatures.system.i18n },
   ]
 
   return (
     <section id="features" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Alerts Card */}
-          <Card className="bg-card border-border hover:shadow-xl transition-all">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                <Bell className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="text-xl text-foreground">{t.alerts.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{t.alerts.description}</p>
-              <ul className="space-y-3">
-                {alertFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-foreground">
-                    <feature.icon className="h-4 w-4 text-primary flex-shrink-0" />
-                    {feature.label}
-                  </li>
-                ))}
-                <li className="text-sm text-muted-foreground italic">{t.alerts.andMore}</li>
-              </ul>
-            </CardContent>
-          </Card>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            {t.nav.features}
+          </h2>
+        </div>
 
-          {/* Location History Card */}
-          <Card className="bg-card border-border hover:shadow-xl transition-all">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                <History className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="text-xl text-foreground">{t.locationHistory.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{t.locationHistory.description}</p>
-              <ul className="space-y-3">
-                {locationFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-foreground">
-                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                    {feature.label}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+        <div className="space-y-16">
+          {/* Admin & Sales */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-8 text-primary border-l-4 border-primary pl-4">
+              {t.platformFeatures.admin.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {adminFeatures.map((feature, index) => (
+                <Card key={index} className="bg-card border-border hover:shadow-md transition-all">
+                  <CardHeader className="flex flex-row items-center space-x-4 py-4">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <feature.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-base font-medium">{feature.label}</CardTitle>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </div>
 
-          {/* Geofencing Card */}
-          <Card className="bg-card border-border hover:shadow-xl transition-all">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                <MapPinned className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="text-xl text-foreground">{t.geofencing.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{t.geofencing.description}</p>
-              <ul className="space-y-3">
-                {geofenceFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-foreground">
-                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                    {feature.label}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          {/* End User Features */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-8 text-primary border-l-4 border-primary pl-4">
+              {t.platformFeatures.endUser.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {endUserFeatures.map((feature, index) => (
+                <Card key={index} className="bg-card border-border hover:shadow-md transition-all">
+                  <CardHeader className="flex flex-row items-center space-x-4 py-4">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <feature.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-base font-medium">{feature.label}</CardTitle>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </div>
 
-          {/* Security Card */}
-          <Card className="bg-card border-border hover:shadow-xl transition-all">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                <Shield className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="text-xl text-foreground">{t.security.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm leading-relaxed">{t.security.description}</p>
-            </CardContent>
-          </Card>
-
-          {/* Reports Card */}
-          <Card className="bg-card border-border hover:shadow-xl transition-all">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                <FileText className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="text-xl text-foreground">{t.reports.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm leading-relaxed">{t.reports.description}</p>
-            </CardContent>
-          </Card>
-
-          {/* Navigation Card */}
-          <Card className="bg-card border-border hover:shadow-xl transition-all">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                <Navigation className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="text-xl text-foreground">{t.navigation.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm leading-relaxed">{t.navigation.description}</p>
-            </CardContent>
-          </Card>
+          {/* System & Security */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-8 text-primary border-l-4 border-primary pl-4">
+              {t.platformFeatures.system.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {systemFeatures.map((feature, index) => (
+                <Card key={index} className="bg-card border-border hover:shadow-md transition-all">
+                  <CardHeader className="flex flex-row items-center space-x-4 py-4">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <feature.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-base font-medium">{feature.label}</CardTitle>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

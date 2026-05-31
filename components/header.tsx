@@ -1,11 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/components/language-provider'
 import { LanguageSwitcher } from '@/components/language-switcher'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu, MapPin } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { useState } from 'react'
 
 export function Header() {
@@ -22,30 +23,35 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-primary-foreground">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-primary-foreground">
-              <MapPin className="h-4 w-4" />
-            </div>
-            <span className="text-xl font-bold tracking-wide">LENKRAD</span>
-          </Link>
+        <div className="grid grid-cols-2 md:grid-cols-3 h-24 items-center">
+          {/* Logo - Column 1 */}
+          <div className="flex justify-start">
+            <Link href="/" className="flex items-center gap-2 text-primary-foreground">
+              <Image 
+                src="/logo.svg" 
+                alt="Lenkrad Logo" 
+                width={240} 
+                height={64} 
+                className="h-16 w-auto"
+              />
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Column 2 */}
+          <nav className="hidden md:flex items-center justify-center gap-10">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-primary-foreground/90 hover:text-primary-foreground transition-colors text-sm font-medium"
+                className="text-primary-foreground/90 hover:text-primary-foreground transition-colors text-base font-medium whitespace-nowrap"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          {/* Right Side */}
-          <div className="flex items-center gap-2">
+          {/* Right Side - Column 3 */}
+          <div className="flex items-center justify-end gap-4">
             <div className="text-primary-foreground">
               <LanguageSwitcher />
             </div>

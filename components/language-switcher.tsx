@@ -18,7 +18,7 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-2 text-inherit hover:bg-secondary/20">
           <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{locale === 'tr' ? 'TR' : 'EN'}</span>
+          <span className="hidden sm:inline-block w-6 text-center">{locale.toUpperCase()}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

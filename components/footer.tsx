@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/components/language-provider'
-import { MapPin, Linkedin } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 
 export function Footer() {
   const { t } = useLanguage()
@@ -12,12 +13,15 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex items-center gap-2 text-secondary-foreground">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-secondary-foreground">
-              <MapPin className="h-4 w-4" />
-            </div>
-            <span className="text-xl font-bold tracking-wide">LENKRAD</span>
-          </div>
+          <Link href="/" className="flex items-center gap-2 text-secondary-foreground">
+            <Image 
+              src="/logo.svg" 
+              alt="Lenkrad Logo" 
+              width={120} 
+              height={30} 
+              className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </Link>
 
           {/* LinkedIn */}
           <Link 
