@@ -14,16 +14,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('tr')
 
-  useEffect(() => {
-    const saved = localStorage.getItem('lenkrad-locale') as Locale
-    if (saved && (saved === 'tr' || saved === 'en')) {
-      setLocaleState(saved)
-    }
-  }, [])
-
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale)
-    localStorage.setItem('lenkrad-locale', newLocale)
   }
 
   const t = getTranslation(locale)
